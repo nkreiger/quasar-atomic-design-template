@@ -1,27 +1,29 @@
 <template>
-  <q-card
-    class="my-card text-white"
-    style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
-  >
-    <q-card-section>
-      <example-molecule :data="data" />
-    </q-card-section>
-
-    <q-card-section class="q-pt-none">
-      {{ lorem }}
-    </q-card-section>
-  </q-card>
+  <!--
+  perform business layer logic
+  pass customized data to molecules
+  handle actions from molecules
+  Handle simple HTML logic too small for molecule layer
+  -->
+  <example-molecule :data="data"
+    v-on:handleClick="onClick"
+  />
 </template>
 
 <script>
 export default {
   components: {
-    'example-molecule': () => import('components/molecules/cards/Title.vue')
+    'example-molecule': () => import('components/molecules/cards/Simple.vue')
   },
   props: {
     data: {
       type: String,
       required: false
+    }
+  },
+  methods: {
+    onClick () {
+      alert('do organism business logic for \n' + this.data)
     }
   }
 }

@@ -1,4 +1,10 @@
 <template>
+  <!--
+  define where each organism
+  define extremely simple HTML logic
+  fetch data and pass it to the business layer
+  handle logic shared across organisms
+  -->
   <div>
     <div class="row">
       <div class="col">
@@ -7,10 +13,10 @@
     </div>
     <div class="row">
       <div class="col-6">
-        <landing-example :data="'organism data one'" />
+        <landing-example :data="'data set one'" />
       </div>
       <div class="col-6">
-        <landing-example :data="'organism data two'" />
+        <landing-example :data="'data set two'" />
       </div>
     </div>
   </div>
